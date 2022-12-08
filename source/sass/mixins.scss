@@ -1,0 +1,48 @@
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin focus {
+  &.focus-visible:focus {
+    @content;
+  }
+}
+
+@mixin breakpoint($props) {
+  $breakpoint: nth($props, 1);
+  $direction: if(length($props) > 1, nth($props, 2), false);
+
+  @if ($direction == down) {
+    @if type-of($breakpoint) == 'string' {
+      @if (map-get-next($breakpoints, $breakpoint)) {
+        @media screen and (max-width: map-get-next($breakpoints, $breakpoint)) {
+          @content;
+        }
+      } @else {
+        @warn 'breakpoint "#{$props}" is not make any sense because it cover all breakpoints';
+      }
+    } @else {
+      @media screen and (max-width: $breakpoint) {
+        @content;
+      }
+    }
+  } @else {
+    @if type-of($breakpoint) == 'string' {
+      @if ($breakpoint == small) {
+        @content;
+      } @else if (map-get($breakpoints, $breakpoint)) {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+          @content;
+        }
+      } @else {
+        @warn 'breakpoint "#{$props}" is not defined in $breakpoints variables';
+      }
+    } @else {
+      @media screen and (min-width: $breakpoint) {
+        @content;
+      }
+    }
+  }
+}

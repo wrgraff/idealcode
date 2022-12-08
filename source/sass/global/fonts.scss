@@ -1,0 +1,17 @@
+$font-family: 'SF';
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    font-display: swap;
+    src:
+      url('#{$file-path}.woff2') format('woff2'),
+      url('#{$file-path}.woff') format('woff');
+  }
+}
+
+// @include font-face($font-family, '../fonts/OpenSans-Regular', 400, normal);
+// @include font-face($font-family, '../fonts/OpenSans-SemiBold', 600, normal);
+// @include font-face($font-family, '../fonts/OpenSans-ExtraBold', 800, normal);
