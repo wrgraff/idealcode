@@ -10,6 +10,8 @@
   }
 }
 
+/* Не добавляйте mixin'ы внутрь отключенной для линтера области: там должен оставаться только breakpoint */
+/* stylelint-disable */
 @mixin breakpoint($props) {
   $breakpoint: nth($props, 1);
   $direction: if(length($props) > 1, nth($props, 2), false);
@@ -46,3 +48,4 @@
     }
   }
 }
+/* stylelint-enable */

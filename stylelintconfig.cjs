@@ -28,7 +28,7 @@ module.exports = {
     'number-no-trailing-zeros': true,
     'length-zero-no-unit': true,
 
-    'string-quotes': 'double',
+    'string-quotes': 'single',
 
     'unit-case': 'lower',
 
@@ -125,7 +125,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {
-        'ignoreAtRules': ['mixin', 'define-mixin', 'include', 'content', 'rules', 'each'],
+        'ignoreAtRules': ['mixin', 'define-mixin', 'include', 'content', 'rules', 'each', 'if', 'else', 'warn'],
       }
     ],
     'at-rule-no-vendor-prefix': true,
