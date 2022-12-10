@@ -2,14 +2,14 @@
 <html lang="ru" class="page">
 
 <head>
-  @@include("source/html/base/head.html")
+  @@include("src/html/base/head.html")
   <title>ProjectName — Главная</title>
 </head>
 
 <body class="page__body">
   <!-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 -->
-  @@include("source/html/base/header.html", {
-  "index": true
+  @@include("src/html/base/header.html", {
+    "index": true
   })
 
   <main class="page__main main">
@@ -23,17 +23,17 @@
     </div>
   </main>
 
-  @@include("source/html/base/footer.html")
+  @@include("src/html/base/footer.html")
 
-  @@include("source/html/base/modal.html", {
-  "name": "feedback"
+  @@include("src/html/base/modal.html", {
+    "name": "feedback"
   })
 
-  @@include("source/html/base/modal.html", {
-  "name": "success",
-  "fitContent": true,
-  "noScale": true,
-  "mod": "some-mod"
+  @@include("src/html/base/modal.html", {
+    "name": "success",
+    "fitContent": true,
+    "noScale": true,
+    "mod": "some-mod"
   })
 
   <script src="js/vendor.min.js"></script>

@@ -9,37 +9,35 @@ import html from './gulp/compileHtml.mjs';
 
 const server = browserSync.create();
 const streamStyles = () => styles().pipe(server.stream());
-const clean = () => del('build');
+const clean = () => del('dist');
 const refresh = (done) => {
   server.reload();
   done();
 };
 
-
 const syncServer = () => {
   server.init({
-    server: 'build/',
+    server: './dist',
     notify: false,
     open: true,
     cors: true,
     ui: false,
   });
 
-  gulp.watch('source/html/**/*.html', gulp.series(html, refresh));
-  gulp.watch('source/sass/**/*.{scss,sass}', streamStyles);
-  gulp.watch('source/js/**/*.{js,json}', gulp.series(js, refresh));
-  gulp.watch('source/data/**/*.{js,json}', gulp.series(copy, refresh));
-  gulp.watch('source/img/**/*.svg', gulp.series(copySvg, sprite, html, refresh));
-  gulp.watch('source/img/**/*.{png,jpg,webp}', gulp.series(copyImages, html, refresh));
+  gulp.watch('./src/html/**/*.html', gulp.series(html, refresh));
+  gulp.watch('./src/sass/**/*.{scss}', streamStyles);
+  gulp.watch('./src/js/**/*.{js,json}', gulp.series(js, refresh));
+  gulp.watch('./src/data/**/*.{js,json}', gulp.series(copy, refresh));
+  gulp.watch('./src/img/**/*.svg', gulp.series(copySvg, sprite, html, refresh));
+  gulp.watch('./src/img/**/*.{png,jpg,webp}', gulp.series(copyImages, createWebp, html, refresh));
 
-  gulp.watch('source/favicon/**', gulp.series(copy, refresh));
-  gulp.watch('source/video/**', gulp.series(copy, refresh));
-  gulp.watch('source/downloads/**', gulp.series(copy, refresh));
-  gulp.watch('source/*.php', gulp.series(copy, refresh));
+  gulp.watch('./src/favicon/**', gulp.series(copy, refresh));
+  gulp.watch('./src/video/**', gulp.series(copy, refresh));
+  gulp.watch('./src/downloads/**', gulp.series(copy, refresh));
+  gulp.watch('./src/*.php', gulp.series(copy, refresh));
 };
 
-
-const build = gulp.series(clean, svgo, copy, styles, sprite, js, html);
+const build = gulp.series(clean, svgo, copy, createWebp, styles, sprite, js, html);
 const start = gulp.series(build, syncServer);
 
 export { optimizeImages as imagemin, createWebp as webp, build, start };

@@ -1,22 +1,22 @@
 import gulp from 'gulp';
 
 const copySvg = () =>
-  gulp.src('source/img/**/*.svg', {base: 'source'})
-      .pipe(gulp.dest('build'));
+  gulp.src('./src/img/**/*.svg', { base: 'src' })
+      .pipe(gulp.dest('./dist'));
 
 const copyImages = () =>
-  gulp.src('source/img/**/*.{png,jpg,webp}', {base: 'source'})
-      .pipe(gulp.dest('build'));
+  gulp.src('./src/img/**/*.{png,jpg,webp}', { base: 'src' })
+      .pipe(gulp.dest('dist'));
 
 const copy = () =>
   gulp.src([
-    'source/**.html',
-    'source/fonts/**',
-    'source/img/**',
-    'source/favicon/**'
+    './src/**.html',
+    './src/fonts/**',
+    './src/img/**',
+    './src/favicon/**'
   ], {
-    base: 'source',
+    base: './src',
   })
-      .pipe(gulp.dest('build'));
+      .pipe(gulp.dest('./dist'));
 
-export {copy, copyImages, copySvg};
+export { copy, copyImages, copySvg };

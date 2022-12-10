@@ -1,31 +1,30 @@
 import gulp from 'gulp';
-import rename from 'gulp-rename';
 import imagemin from 'gulp-imagemin';
 import webp from 'gulp-webp';
-import svgstore from 'gulp-svgstore';
+import { stacksvg } from 'gulp-stacksvg';
 
 const svgo = () =>
   gulp
-      .src('source/img/**/*.{svg}')
+      .src('./src/img/**/*.{svg}')
       .pipe(
           imagemin([
             imagemin.svgo({
               plugins: [
-                {removeViewBox: false},
-                {removeRasterImages: true},
-                {removeUselessStrokeAndFill: false}
+                { removeViewBox: false },
+                { removeRasterImages: true },
+                { removeUselessStrokeAndFill: false }
               ],
             })
           ])
       )
-      .pipe(gulp.dest('source/img'));
+      .pipe(gulp.dest('./src/img'));
 
-const sprite = () =>
-  gulp
-      .src('source/img/sprite/*.svg')
-      .pipe(svgstore({inlineSvg: true}))
-      .pipe(rename('sprite_auto.svg'))
-      .pipe(gulp.dest('build/img'));
+const sprite = () => {
+  return gulp
+      .src('./src/img/sprite/*.svg')
+      .pipe(stacksvg({ output: 'sprite' }))
+      .pipe(gulp.dest('./dist/img'));
+};
 
 /*
   Optional tasks
@@ -34,27 +33,27 @@ const sprite = () =>
   Используйте отличное от дефолтного значение root, если нужно обработать отдельную папку в img,
   а не все изображения в img во всех папках.
 
-  root = '' - по дефолту webp добавляются и обновляются во всех папках в source/img/
-  root = 'content/' - webp добавляются и обновляются только в source/img/content/
+  root = '' - по дефолту webp добавляются и обновляются во всех папках в src/img/
+  root = 'content/' - webp добавляются и обновляются только в src/img/content/
 */
 
 const createWebp = () => {
-  const root = '';
+  const root = './img';
   return gulp
-      .src(`source/img/${root}**/*.{png,jpg}`)
-      .pipe(webp({quality: 90}))
-      .pipe(gulp.dest(`source/img/${root}`));
+      .src(`./src/img/${root}**/*.{png,jpg}`)
+      .pipe(webp({ quality: 90 }))
+      .pipe(gulp.dest(`./src/img/${root}`));
 };
 
 const optimizeImages = () =>
   gulp
-      .src('build/img/**/*.{png,jpg}')
+      .src('./dist/img/**/*.{png,jpg}')
       .pipe(
           imagemin([
-            imagemin.optipng({optimizationLevel: 3}),
-            imagemin.mozjpeg({quality: 75, progressive: true})
+            imagemin.optipng({ optimizationLevel: 3 }),
+            imagemin.mozjpeg({ quality: 75, progressive: true })
           ])
       )
-      .pipe(gulp.dest('build/img'));
+      .pipe(gulp.dest('dist/img'));
 
-export {svgo, sprite, createWebp, optimizeImages};
+export { svgo, sprite, createWebp, optimizeImages };

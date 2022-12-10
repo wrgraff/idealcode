@@ -3,7 +3,7 @@ import fileinclude from 'gulp-file-include';
 import htmlbeautify from 'gulp-html-beautify';
 
 const compileHtml = () => {
-  return gulp.src(['source/html/*.html'])
+  return gulp.src(['src/html/*.html'])
       .pipe(fileinclude({
         prefix: '@@',
         basepath: '@root',
@@ -17,7 +17,7 @@ const compileHtml = () => {
         'max_preserve_newlines': 0,
         'wrap_attributes': 'auto',
       }))
-      .pipe(gulp.dest('build'));
+      .pipe(gulp.dest('dist'));
 };
 
 export default compileHtml;
