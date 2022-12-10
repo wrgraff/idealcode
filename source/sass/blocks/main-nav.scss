@@ -1,15 +1,13 @@
 .main-nav__list {
   display: flex;
   margin: 0;
-  margin-right: 20px;
-  margin-left: 60px;
   padding: 0;
 
   list-style: none;
 }
 
-.main-nav__item {
-  margin-right: 20px;
+.main-nav__item + .main-nav__item {
+  margin-left: 16px;
 }
 
 .main-nav__item--active {
@@ -21,5 +19,7 @@
 }
 
 .main-nav__toggle {
-  display: none;
+  @include breakpoint(medium) {
+    display: none;
+  }
 }

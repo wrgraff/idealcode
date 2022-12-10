@@ -16,8 +16,10 @@
 
 // Blocks
 
+@import 'blocks/page';
+@import 'blocks/main';
 @import 'blocks/header';
-@import 'blocks/main-nav';
 @import 'blocks/footer';
+@import 'blocks/main-nav';
 @import 'blocks/modal';
-@import 'blocks/btn';
+@import 'blocks/button';

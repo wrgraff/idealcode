@@ -1,0 +1,18 @@
+.page__body {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100 * var(--vh, 1vh));
+}
+
+.page__main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.page__header {
+  width: 100%;
+}
+
+.page__footer {
+  width: 100%;
+}
