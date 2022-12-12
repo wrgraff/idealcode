@@ -9,11 +9,11 @@
   "scripts": {
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
-    "test": "npm run editorconfig & npm run stylelint & eslint source/js/",
+    "validator": "node-w3c-validator -i ./dist/**/*.html -f lint -evH",
+    "test": "npm run editorconfig & npm run stylelint & eslint source/js/ & npm run html",
     "build": "cross-env NODE_ENV=production gulp build & gulp imagemin",
     "start": "cross-env NODE_ENV=development gulp start",
-    "imagemin": "gulp imagemin",
-    "webp": "gulp webp"
+    "html": "gulp html"
   },
   "editorconfig-cli": [
     "*.json",
@@ -49,6 +49,7 @@
     "gulp-stacksvg": "^1.0.6",
     "gulp-svgmin": "^4.1.0",
     "gulp-webp": "^4.0.1",
+    "node-w3c-validator": "^2.0.2",
     "postcss": "8.4.14",
     "sass": "1.53.0",
     "stylelint": "13.13.1",
