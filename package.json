@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"src/sass/**/*.scss\" --syntax scss",
     "validator": "node-w3c-validator -i ./dist/**/*.html -f lint -evH",
     "test": "npm run editorconfig & npm run stylelint & npm run validator & eslint ./src/js",
     "build": "cross-env NODE_ENV=production gulp build & gulp imagemin",
