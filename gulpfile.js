@@ -25,7 +25,7 @@ const syncServer = () => {
   });
 
   gulp.watch('./src/html/**/*.html', gulp.series(html, refresh));
-  gulp.watch('./src/sass/**/*.{scss}', streamStyles);
+  gulp.watch('./src/sass/**/**', streamStyles);
   gulp.watch('./src/js/**/*.{js,json}', gulp.series(js, refresh));
   gulp.watch('./src/data/**/*.{js,json}', gulp.series(copy, refresh));
   gulp.watch('./src/img/**/*.svg', gulp.series(copySvg, sprite, html, refresh));
@@ -34,7 +34,6 @@ const syncServer = () => {
   gulp.watch('./src/favicon/**', gulp.series(copy, refresh));
   gulp.watch('./src/video/**', gulp.series(copy, refresh));
   gulp.watch('./src/downloads/**', gulp.series(copy, refresh));
-  gulp.watch('./src/*.php', gulp.series(copy, refresh));
 };
 
 const build = gulp.series(clean, svgo, copy, createWebp, styles, sprite, js, html);
