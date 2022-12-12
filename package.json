@@ -18,11 +18,11 @@
   "editorconfig-cli": [
     "*.json",
     "*.js",
-    "source/**/*.html",
-    "source/**/*.pug",
-    "source/js/**/*.js",
-    "source/img/**/*.svg",
-    "source/sass/**/*.{sass,scss}"
+    "src/**/*.html",
+    "src/**/*.pug",
+    "src/js/**/*.js",
+    "src/img/**/*.svg",
+    "src/sass/**/*.{sass,scss}"
   ],
   "devDependencies": {
     "@babel/preset-env": "7.18.6",
