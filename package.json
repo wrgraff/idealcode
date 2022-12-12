@@ -10,7 +10,7 @@
     "editorconfig": "editorconfig-cli",
     "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "validator": "node-w3c-validator -i ./dist/**/*.html -f lint -evH",
-    "test": "npm run editorconfig & npm run stylelint & eslint source/js/ & npm run html",
+    "test": "npm run editorconfig & npm run stylelint & npm run validator & eslint ./src/js",
     "build": "cross-env NODE_ENV=production gulp build & gulp imagemin",
     "start": "cross-env NODE_ENV=development gulp start",
     "html": "gulp html"

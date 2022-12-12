@@ -1,4 +1,4 @@
-build/*.js
-source/js/vendor/*.js
+dist/*.js
+src/js/vendor/*.js
 gulpfile.js
 webpack.config.js

@@ -1,4 +1,4 @@
-import {iosChecker} from './ios-checker';
+import { iosChecker } from './ios-checker';
 
 const iosVhFix = () => {
   if (!(!!window.MSInputMethodContext && !!document.documentMode)) {
@@ -14,4 +14,4 @@ const iosVhFix = () => {
   }
 };
 
-export {iosVhFix};
+export { iosVhFix };
