@@ -1,9 +1,9 @@
 # Шаблон Ideal Code для разработки статичных сайтов
 
-[![](/workflows/EditorConfig/badge.svg)](/actions?query=workflow%3AEditorConfig)
-[![](/workflows/ESLint/badge.svg)](/actions?query=workflow%3AESLint)
-[![](/workflows/Stylelint/badge.svg)](/actions?query=workflow%3AStylelint)
-[![](/workflows/HTML/badge.svg)](/actions?query=workflow%3AHTML)
+[![](https://github.com/wrgraff/idealcode/workflows/EditorConfig/badge.svg)](https://github.com/wrgraff/idealcode/actions?query=workflow%3AEditorConfig)
+[![](https://github.com/wrgraff/idealcode/workflows/Validator/badge.svg)](https://github.com/wrgraff/idealcode/actions?query=workflow%3AValidator)
+[![](https://github.com/wrgraff/idealcode/workflows/Stylelint/badge.svg)](https://github.com/wrgraff/idealcode/actions?query=workflow%3AStylelint)
+[![](https://github.com/wrgraff/idealcode/workflows/ESLint/badge.svg)](https://github.com/wrgraff/idealcode/actions?query=workflow%3AESLint)
 
 Шаблон использует сборку с помощью Gulp.  
 Вся разработка ведётся в директории `src`.  
