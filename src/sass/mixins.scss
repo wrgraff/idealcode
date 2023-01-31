@@ -19,7 +19,7 @@
   @if ($direction == down) {
     @if type-of($breakpoint) == 'string' {
       @if (map-get-next($breakpoints, $breakpoint)) {
-        @media screen and (max-width: map-get-next($breakpoints, $breakpoint)) {
+        @media screen and (max-width: (map-get-next($breakpoints, $breakpoint) - 1px)) {
           @content;
         }
       } @else {
