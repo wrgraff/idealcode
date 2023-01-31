@@ -23,3 +23,5 @@
 
 ### [Работа с include в HTML](./docs/include.md)
 ### [Модалки](./docs/modals.md)
+### [Правила БЭМ](./docs/bem.md)
+### [Миксин breakpoint](./docs/breakpoint.md)
