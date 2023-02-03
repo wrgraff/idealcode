@@ -51,4 +51,4 @@ const prepareFiles = gulp.series(
 const build = gulp.series(prepareFiles, optimizeImages)
 const start = gulp.series(prepareFiles, syncServer);
 
-export { build, start };
+export { html, build, start };
