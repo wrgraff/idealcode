@@ -36,7 +36,19 @@ const syncServer = () => {
   gulp.watch('./src/downloads/**', gulp.series(copy, refresh));
 };
 
-const build = gulp.series(clean, svgo, copy, createWebp, styles, sprite, js, html);
-const start = gulp.series(build, syncServer);
+const prepareFiles = gulp.series(
+  clean,
+  gulp.parallel(
+    svgo,
+    copy,
+    createWebp,
+    styles,
+    sprite,
+    js,
+    html
+  )
+);
+const build = gulp.series(prepareFiles, optimizeImages)
+const start = gulp.series(prepareFiles, syncServer);
 
 export { html, build, start };
