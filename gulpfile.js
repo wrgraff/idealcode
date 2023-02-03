@@ -3,6 +3,8 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import styles from './gulp/compileStyles.mjs';
 import { copy, copyImages, copySvg } from './gulp/copyAssets.mjs';
+import js from './gulp/compileScripts.mjs';
+import { svgo, sprite, createWebp, optimizeImages } from './gulp/optimizeImages.mjs';
 import html from './gulp/compileHtml.mjs';
 
 const server = browserSync.create();
@@ -34,7 +36,19 @@ const syncServer = () => {
   gulp.watch('./src/downloads/**', gulp.series(copy, refresh));
 };
 
-const build = gulp.series(clean, copy, styles, html);
-const start = gulp.series(build, syncServer);
+const prepareFiles = gulp.series(
+  clean,
+  gulp.parallel(
+    svgo,
+    copy,
+    createWebp,
+    styles,
+    sprite,
+    js,
+    html
+  )
+);
+const build = gulp.series(prepareFiles, optimizeImages)
+const start = gulp.series(prepareFiles, syncServer);
 
-export { html, build, start };
+export { build, start };
