@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  @@include("src/html/base/head.html")
+  <title>Малыши-Карандаши Ясли - Фотогалерея</title>
+</head>
+
+<body class="page__body">
+  <!-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 -->
+  @@include("src/html/base/header.html", {
+  "index": true
+  })
+
+  <main class="page__main main">
+    <div class="container">
+      <p>
+        <button type="button" class="button" data-open-modal="feedback">modal--feedback link</button>
+      </p>
+      <p>
+        <button type="button" class="button" data-open-modal="success">modal--success link</button>
+      </p>
+      <section class="main__company gallery">
+        <h1 class="gallery__title">Фотогалерея</h1>
+        <p class="gallery__description">Здесь вы можете увидеть фотографии наших малышей</p>
+        <button class="gallery__slider slider-next" type="button">
+          <span class="visually-hidden">Предыдущее фото</span>
+        </button>
+        <button class="gallery__slider slider-prev" type="button">
+          <span class="visually-hidden">Следующее фото</span>
+        </button>
+        <div class="gallery__pagination pagination">
+          <ol class="pagination__list">
+            <li class="pagination__item">
+              <button class="pagination__button pagination__button--current">
+                <span class="visually-hidden">1 фото</span>
+              </button>
+            </li>
+            <li class="pagination__item">
+              <button class="pagination__button" type="button">
+                <span class="visually-hidden">2 фото</span>
+              </button>
+            </li>
+            <li class="pagination__item">
+              <button class="pagination__button" type="button">
+                <span class="visually-hidden">3 фото</span>
+              </button>
+            </li>
+            <li class="pagination__item">
+              <button class="pagination__button" type="button">
+                <span class="visually-hidden">4 фото</span>
+              </button>
+            </li>
+            <li class="pagination__item">
+              <button class="pagination__button" type="button">
+                <span class="visually-hidden">5 фото</span>
+              </button>
+            </li>
+          </ol>
+        </div>
+      </section>
+  </main>
+  @@include("src/html/base/contact-form.html")
+
+  @@include("src/html/base/footer.html")
+
+  @@include("src/html/base/modal.html", {
+  "name": "feedback"
+  })
+
+  @@include("src/html/base/modal.html", {
+  "name": "success",
+  "fitContent": true,
+  "noScale": true,
+  "mod": "some-mod"
+  })
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

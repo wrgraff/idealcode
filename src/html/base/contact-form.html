@@ -1,0 +1,28 @@
+<section class="contact-form form">
+  <h2 class="visually-hidden">Форма контактов</h2>
+  <p class="form__title">Напишите нам</p>
+  <p class="form__description">Оставьте свои контактные данные и мы свяжемся с вами!</p>
+  <form class="form__box" action="form.php" method="post">
+    <div>
+      <label class="visually-hidden form__field" for="form__box"></label>
+      <input class="form__field" placeholder="Укажите свое имя" type="text" name="name-form" id="name-form"
+        required>
+    </div>
+    <div>
+      <label class="visually-hidden form__field" for="form__box"></label>
+      <input class="form__field" placeholder="Укажите свой телефон" type="text" name="phone-form" id="phone-form"
+        required>
+    </div>
+    <div>
+      <label class="visually-hidden form__field" for="form__box"></label>
+      <input class="form__field" placeholder="Укажите свою почту" type="email" name="email-form" id="email-form"
+        required>
+    </div>
+    <div>
+      <label class="visually-hidden form__field" for="form__box"></label>
+      <input class="form__field form__field--comment" placeholder="Напишите свои комментарии и вопросы ниже:" type="text"
+        name="comment-form" id="email-form">
+    </div>
+    <button type="submit" class="button">Свяжитесь с нами</button>
+  </form>
+</section>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  @@include("src/html/base/head.html")
+  <title>Малыши-Карандаши Ясли — Цены</title>
+</head>
+
+<body class="page__body">
+  <!-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 -->
+  @@include("src/html/base/header.html", {
+  "index": true
+  })
+
+  <main class="page__main main">
+    <div class="container">
+      <p>
+        <button type="button" class="button" data-open-modal="feedback">modal--feedback link</button>
+      </p>
+      <p>
+        <button type="button" class="button" data-open-modal="success">modal--success link</button>
+      </p>
+      <section class="main__prices prices">
+        <h1 class="visually-hidden">Тарифы на пребывание в яслях и старшей группе</h1>
+        <h2 class="prices__header">Наши тарифы</h2>
+        <p class="prices__description">Выберите тариф, добавьте дополнительные занятие и увидите окончательную цену</p>
+        <form class="prices__form form" action="#" method="get">
+          <fieldset class="form__tariffs">
+            <ul class="form__list">
+              <li class="form__item">
+                <label class="form__control">
+                  <input class="visually-hidden form__input" type="checkbox" name="full-day" checked>
+                  <img class="form__icon" src="#" width="121" height="121" alt="Иконка 1ого тарифа">
+                  <span class="form__label">Тариф “Полный день”</span>
+                  <span class="form__text">8:00 - 19:00</span>
+                  <button class="form__button" type="button">
+                    <span>25 000 руб.</span>
+                </label>
+              </li>
+              <li class="form__item">
+                <label class="form__control">
+                  <input class="visually-hidden form__input" type="checkbox" name="short-day">
+                  <img class="form__icon" src="#" width="121" height="121" alt="Иконка 2ого тарифа">
+                  <span class="form__label">Тариф “Сокращенный день”</span>
+                  <p class="form__text">8:00 - 17:00</p>
+                  <button class="form__button" type="button">
+                    <span>23 000 руб.</span>
+                  </button>
+                </label>
+              </li>
+              <li class="form__item">
+                <label class="form__control">
+                  <input class="visually-hidden form__input" type="checkbox" name="half-day">
+                  <img class="form__icon" src="#" width="121" height="121" alt="Иконка 3его тарифа">
+                  <span class="form__label">Тариф “Половина дня”</span>
+                  <p class="form__text">8:00 - 13:00</p>
+                  <button class="form__button" type="button">
+                    <span>21 000 руб.</span>
+                  </button>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="form__additional nursery">
+            <legend class="nursery__title">в яслях:</legend>
+            <ul class="nursery__list">
+              <li class="nursery__item">
+                <label class="nursery__control">
+                  <input class="visually-hidden nursery__input" type="radio" name="musical" value="musical" checked>
+                  <span class="nursery__label">Музыкальные занятия</span>
+                  <span class="nursery__hours">4 раза в неделю по 1,5 часа</span>
+                  <button class="nursery__button" type="button">
+                    <span>1 500 руб.</span>
+                  </button>
+                </label>
+              </li>
+              <li class="nursery__item">
+                <label class="nursery__control">
+                  <input class="visually-hidden nursery__input" type="radio" name="phycologist" value="phycologist"
+                    checked>
+                  <span class="nursery__label">Музыкальные занятия</span>
+                  <span class="nursery__hours">4 раза в неделю по 1,5 часа</span>
+                  <button class="nursery__button" type="button">
+                    <span>1 500 руб.</span>
+                  </button>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="form__additional kindergarten">
+            <legend class="kindergarten__title">в старшей группе:</legend>
+            <ul class="kindergarten__list">
+              <li class="kindergarten__item">
+                <label class="kindergarten__control">
+                  <input class="visually-hidden kindergarten__input" type="radio" name="taekwondo" value="taekwondo"
+                    checked>
+                  <span class="kindergarten__label">Музыкальные занятия</span>
+                  <span class="kindergarten__hours">4 раза в неделю по 1,5 часа</span>
+                  <button class="kindergarten__button" type="button">
+                    <span>1 500 руб.</span>
+                  </button>
+                </label>
+              </li>
+              <li class="kindergarten__item">
+                <label class="kindergarten__control">
+                  <input class="visually-hidden kindergarten__input" type="radio" name="english" value="english">
+                  <span class="kindergarten__label">Музыкальные занятия</span>
+                  <span class="kindergarten__hours">4 раза в неделю по 1,5 часа</span>
+                  <button class="kindergarten__button" type="button">
+                    <span>1 500 руб.</span>
+                  </button>
+                </label>
+              </li>
+              <li class="kindergarten__item">
+                <label class="kindergarten__control">
+                  <input class="visually-hidden kindergarten__input" type="radio" name="chinese" value="chinese">
+                  <span class="kindergarten__label">Музыкальные занятия</span>
+                  <span class="kindergarten__hours">4 раза в неделю по 1,5 часа</span>
+                  <button class="kindergarten__button" type="button">
+                    <span>1 500 руб.</span>
+                  </button>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="form__final-price final-price">
+            <legend class="final-price__title">Итоговая цена:</legend>
+            <span class="final-price__description">*Цена может измениться, уточняйте информацию по телефону</span>
+            <div class="final-price__input">
+              <label class="final-price__label">
+                <span class="final-price__text">в месяц</span>
+                <input class="visually-hidden final-price__input" type="text" placeholder="0" value="0"
+                  name="final-price">
+              </label>
+              <button class="final-price__button" type="button">
+                <span>28 000 руб.</span>
+              </button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+      <section class="tariff__info tariffs">
+        <h2 class="tariffs__header">Что в себя включает каждый из тарифов</h2>
+        <p class="tariffs__text">
+          Группы:
+          1,8 – 2,3 года
+          2,3 – 2,9 года
+          2,9 – 3,6 лет
+          5-разовое питание, две прогулки, занятия по возрастным подгруппам, музыкальные занятия 2 раза в неделю,
+          логоритмика – 1 раз в неделю.
+          Режим дня согласно действующему Сан ПИН, в соответствии с возрастом.
+          8.00 - 8.50 - встреча детей, утренняя гимнастика
+          8.50 - 9.10 - завтрак
+          9.20 - 10.00 - развивающие занятия (по расписанию), по возрастам, игры
+          10.00 - 10.15 - 2-й завтрак (питьё)
+          10.30 - 11.30 - прогулка
+          11.45 - 12.15 - обед
+          13.00 - 15.00 - дневной сон
+          15.00 - 15.30 - подъем, закаливающие процедуры
+          15.30 - 16.00 - полдник
+          16.00 - 16.45 - занятия, чтение книг, рисование, игры
+          16.45 - 18.00 - подготовка к прогулке, прогулка
+          18.10 - 19.00 - ужин, уход домой.
+          До 20.00 - по необходимости ( +250 руб.)
+          Разовые посещения (вне абонемента)
+          Оплата исключительно почасовая, 250 руб./час, посещение только по записи, при наличии свободных мест.
+          Перерасчёты в случае болезни более 7 рабочих дней (при предоставлении справки), на время отпуска – по
+          согласованию, в любом случае оплата не менее 50% от стоимости абонемента</p>
+      </section>
+
+    </div>
+  </main>
+  @@include("src/html/base/contact-form.html")
+
+  @@include("src/html/base/footer.html")
+
+  @@include("src/html/base/modal.html", {
+  "name": "feedback"
+  })
+
+  @@include("src/html/base/modal.html", {
+  "name": "success",
+  "fitContent": true,
+  "noScale": true,
+  "mod": "some-mod"
+  })
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>

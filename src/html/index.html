@@ -3,13 +3,13 @@
 
 <head>
   @@include("src/html/base/head.html")
-  <title>ProjectName — Главная</title>
+  <title>Малыши-Карандаши Ясли — Главная</title>
 </head>
 
 <body class="page__body">
   <!-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 -->
   @@include("src/html/base/header.html", {
-    "index": true
+  "index": true
   })
 
   <main class="page__main main">
@@ -20,20 +20,127 @@
       <p>
         <button type="button" class="button" data-open-modal="success">modal--success link</button>
       </p>
+      <section class="main__banner banner">
+        <h1 class="visually-hidden">Информация про Ясли</h1>
+        <h2 class="visually-hidden">Главный баннер</h2>
+        <p class="banner__header">Идеальные ясли для ваших малышей</p>
+        <p class="banner__description">для детей от 1,6</p>
+        <button type="button" class="main__button">
+          <span>Свяжитесь с нами</span>
+        </button>
+      </section>
+      <aside class="main__info info-box">
+        <h2 class="info-box__header">Наши тарифы, оплата и дополнительные занятия</h2>
+        <p class="info-box__description">Что именно включено в тарифы, какие дополнительные занятия доступны, сколько
+          часов - вся важная информация по кнопке для получения дополнительной информации.</p>
+        <button type="button" class="main__button">
+          <span>Узнайте больше</span>
+        </button>
+      </aside>
+      <section class="main__advantages advantages">
+        <h2 class="visually-hidden">Наши преимущества</h2>
+        <p class="advantages__header">Почему вы должны выбрать именно нас?</p>
+        <ul class="advantages__list">
+          <li class="advantages__item">
+            <p class="advantages__title">Мы самые красивые</p>
+            <p class="advantages__description">We present you a proposal and discuss niffty-gritty like</p>
+          </li>
+          <li class="advantages__item">
+            <p class="advantages__title">Мы самые умные</p>
+            <p class="advantages__description">Protocols apart from aengage models, pricing billing</p>
+          </li>
+          <li class="advantages__item">
+            <p class="advantages__title">Мы самые пунктуальные</p>
+            <p class="advantages__description">Communication protocols apart from engagement models</p>
+          </li>
+          <li class="advantages__item">
+            <p class="advantages__title">Мы самые лучшие в том, что делаем</p>
+            <p class="advantages__description">Protocols apart from aengage models, pricing billing</p>
+          </li>
+        </ul>
+      </section>
+      <article class="main__news news">
+        <h2 class="visually-hidden">Новости</h2>
+        <ul class="news__list">
+          <li class="news__item">
+            <video width="320" height="240" controls>
+              <source src="movie.mp4" type="video/mp4">
+              <source src="movie.ogg" type="video/ogg">
+              Your browser does not support the video tag.
+            </video>
+            <p class="news__header">Great Digital Product Agency since 2016</p>
+            <p class="news__description">Our Business Plan is a written document describing a company's core business
+              activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high
+              quality
+              Product with modern idea accordingly their budgets and according thir reuirements.</p>
+          </li>
+        </ul>
+        <div class="news__buttons switch">
+          <button type="button" class="switch__buttons switch__buttons--current">
+            <span class="visually-hidden">Смотреть отзыв №1</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №2</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №3</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №4</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №5</span>
+          </button>
+        </div>
+      </article>
+      <section class="main__reviews reviews">
+        <h2 class="visually-hidden">Отзывы</h2>
+        <p class="reviews__header">Что малыши и их родители говорят о нас?</p>
+        <p class="reviews__description">Честные отзывы родителей, вы также можете оставить свой отзыв</p>
+        <div class="reviews__box card">
+          <ul class="card__list">
+            <li class="card__item">
+              <a href="#" class="card__link">
+                <img class="card__image" src="img/photo.jpeg" width="180" height="120" alt="Фото отзыв 1">
+              </a>
+              <p class="card__title">ФИО Родителя, отделение, возраст ребенка</p>
+              <p class="card__description">Текст отзыва</p>
+            </li>
+          </ul>
+        </div>
+        <div class="reviews__buttons switch">
+          <button type="button" class="switch__buttons switch__buttons--current">
+            <span class="visually-hidden">Смотреть отзыв №1</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №2</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №3</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №4</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №5</span>
+          </button>
+        </div>
+      </section>
     </div>
   </main>
+  @@include("src/html/base/contact-form.html")
 
   @@include("src/html/base/footer.html")
 
   @@include("src/html/base/modal.html", {
-    "name": "feedback"
+  "name": "feedback"
   })
 
   @@include("src/html/base/modal.html", {
-    "name": "success",
-    "fitContent": true,
-    "noScale": true,
-    "mod": "some-mod"
+  "name": "success",
+  "fitContent": true,
+  "noScale": true,
+  "mod": "some-mod"
   })
 
   <script src="js/vendor.min.js"></script>

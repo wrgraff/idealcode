@@ -1,6 +1,6 @@
 <header class="page__header header @@if (context.mod) { header--@@mod }">
   <div class="header__container container">
-    <a href="./index.html" class="header__logo">
+    <a href="./index.html" class="header__logo logo">
       Логотип
     </a>
 
@@ -11,13 +11,26 @@
 
       <ul class="main-nav__list">
         <li class="main-nav__item @@if (context.headerActiveLinkIndex === 0) { main-nav__item--active }">
-          <a href="#" class="main-nav__link">Страница 1</a>
+          <a href="./index.html" class="main-nav__link">Главная</a>
         </li>
         <li class="main-nav__item @@if (context.headerActiveLinkIndex === 1) { main-nav__item--active }">
-          <a href="#" class="main-nav__link">Страница 2</a>
+          <a href="./about-us.html" class="main-nav__link">О компании</a>
         </li>
         <li class="main-nav__item @@if (context.headerActiveLinkIndex === 2) { main-nav__item--active }">
-          <a href="#" class="main-nav__link">Страница 3</a>
+          <a href="./prices.html" class="main-nav__link">Цены</a>
+        </li>
+        <li class="main-nav__item @@if (context.headerActiveLinkIndex === 3) { main-nav__item--active }">
+          <a href="./reviews.html" class="main-nav__link">Отзывы</a>
+        </li>
+
+        <li class="main-nav__item @@if (context.headerActiveLinkIndex === 5) { main-nav__item--active }">
+          <a href="./news.html" class="main-nav__link">Новости</a>
+        </li>
+       <li class="main-nav__item @@if (context.headerActiveLinkIndex === 4) { main-nav__item--active }">
+          <a href="./elementary-school.html" class="main-nav__link">Начальная школа</a>
+        </li>
+        <li class="main-nav__item @@if (context.headerActiveLinkIndex === 6) { main-nav__item--active }">
+          <a href="./contacts.html" class="main-nav__link">Контакты</a>
         </li>
       </ul>
     </nav>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  @@include("src/html/base/head.html")
+  <title>Малыши-Карандаши Ясли — О Компании</title>
+</head>
+
+<body class="page__body">
+  <!-- для внутренних страниц используйте "headerActiveLinkIndex": 0\1\2 -->
+  @@include("src/html/base/header.html", {
+  "index": true
+  })
+
+  <main class="page__main main">
+    <div class="container">
+      <p>
+        <button type="button" class="button" data-open-modal="feedback">modal--feedback link</button>
+      </p>
+      <p>
+        <button type="button" class="button" data-open-modal="success">modal--success link</button>
+      </p>
+      <section class="main__company about-us">
+        <h1 class="visually-hidden">Информация о компании</h1>
+        <p>Below you can get acquainted with our tutors and teachers</p>
+      </section>
+      <section class="main__teachers teachers">
+        <h2 class="visually-hidden">Информация о воспитателях</h2>
+        <div class="teachers__box card">
+          <ul class="card__list">
+            <li class="card__item">
+              <a href="#" class="card__link">
+                <img class="card__image" src="img/photo.jpeg" width="180" height="120" alt="Воспитатель №1">
+              </a>
+              <p class="card__title">ФИО Воспитателя, отделение</p>
+              <p class="card__description">Информация о воспитателе, образование, опыт работы</p>
+            </li>
+            <li class="card__item">
+              <a href="#" class="card__link">
+                <img class="card__image" src="img/photo.jpeg" width="180" height="120" alt="Воспитатель №2">
+              </a>
+              <p class="card__title">ФИО Воспитателя, отделение</p>
+              <p class="card__description">Информация о воспитателе, образование, опыт работы</p>
+            </li>
+            <li class="card__item">
+              <a href="#" class="card__link">
+                <img class="card__image" src="img/photo.jpeg" width="180" height="120" alt="Воспитатель №3">
+              </a>
+              <p class="card__title">ФИО Воспитателя, отделение</p>
+              <p class="card__description">Информация о воспитателе, образование, опыт работы</p>
+            </li>
+            <li class="card__item">
+              <a href="#" class="card__link">
+                <img class="card__image" src="img/photo.jpeg" width="180" height="120" alt="Воспитатель №4">
+              </a>
+              <p class="card__title">ФИО Воспитателя, отделение</p>
+              <p class="card__description">Информация о воспитателе, образование, опыт работы</p>
+            </li>
+            <li class="card__item">
+              <a href="#" class="card__link">
+                <img class="card__image" src="img/photo.jpeg" width="180" height="120" alt="Воспитатель №5">
+              </a>
+              <p class="card__title">ФИО Воспитателя, отделение</p>
+              <p class="card__description">Информация о воспитателе, образование, опыт работы</p>
+            </li>
+            <li class="card__item">
+              <a href="#" class="card__link">
+                <img class="card__image" src="img/photo.jpeg" width="180" height="120" alt="Воспитатель №6">
+              </a>
+              <p class="card__title">ФИО Воспитателя, отделение</p>
+              <p class="card__description">Информация о воспитателе, образование, опыт работы</p>
+            </li>
+          </ul>
+        </div>
+        <div class="teachers__buttons switch">
+          <button type="button" class="switch__buttons switch__buttons--current">
+            <span class="visually-hidden">Смотреть отзыв №1</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №2</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №3</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №4</span>
+          </button>
+          <button type="button" class="switch__buttons">
+            <span class="visually-hidden">Смотреть отзыв №5</span>
+          </button>
+        </div>
+      </section>
+    </div>
+  </main>
+  @@include("src/html/base/contact-form.html")
+
+  @@include("src/html/base/footer.html")
+
+  @@include("src/html/base/modal.html", {
+  "name": "feedback"
+  })
+
+  @@include("src/html/base/modal.html", {
+  "name": "success",
+  "fitContent": true,
+  "noScale": true,
+  "mod": "some-mod"
+  })
+
+  <script src="js/vendor.min.js"></script>
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
